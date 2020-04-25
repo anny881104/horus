@@ -88,7 +88,7 @@ const App = () => {
             marginTop: 0,
             padding: 0,
           },
-          style:{height:56,backgroundColor:"#F2E6D8",shadowColor:"#929292",shadowOpacity:"10"}
+          style:{height:56,backgroundColor:"#F2E6D8",shadowColor:"#929292",shadowOpacity:.5}
           
         }}
         
