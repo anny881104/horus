@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView,Text,StyleSheet,View,Image,ImageBackground } from 'react-native';
+import { Text,StyleSheet,View,Image,ImageBackground,Button } from 'react-native';
 
 const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/wall.png" };
 

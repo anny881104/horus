@@ -1,8 +1,8 @@
 import React from "react";
 import { ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground} from 'react-native';
 
-const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catG.png" };
-const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catW.png" };
+const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catGbg.png" };
+const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catWbg.png" };
 
 
 
@@ -16,7 +16,7 @@ const JouralScreen = ({ navigation }) => {
        <View style={styles.box}>
         
             <TouchableOpacity  onPress={() => navigation.navigate('Story1')}> 
-              <ImageBackground source={image1} style={styles.catG}>
+              <ImageBackground source={image1} style={styles.cat}>
                 <View style={styles.storybox}>
                 
                     <Image style={{ width:113,height:113}}
@@ -31,34 +31,40 @@ const JouralScreen = ({ navigation }) => {
           <View style={styles.line}></View>
        
         <TouchableOpacity onPress = {() =>alert('章節尚未開啟!')}> 
-        <View style={styles.storybox}>
-        <Text style={styles.storytext2}>CHAPTER 02</Text>
-          <Image style={{ width:113,height:113 }}
-                source={require('../assets/c2.png')}
-          />
-        </View>
+          <ImageBackground source={image2} style={styles.cat}>
+            <View style={styles.storybox}>
+            <Text style={styles.storytext2}>CHAPTER 02</Text>
+              <Image style={{ width:113,height:113 }}
+                    source={require('../assets/c2.png')}
+              />
+            </View>
+          </ImageBackground>
         </TouchableOpacity> 
 
         <View style={styles.line}></View>
 
         <TouchableOpacity onPress = {() =>alert('章節尚未開啟!')}> 
-        <View style={styles.storybox}>
-          <Image style={{ width:113,height:113 }}
-                source={require('../assets/c3.png')}
-          />
-          <Text style={styles.storytext}>CHAPTER 03</Text>
-        </View>
+          <ImageBackground source={image2} style={styles.cat}>
+            <View style={styles.storybox}>
+              <Image style={{ width:113,height:113 }}
+                    source={require('../assets/c3.png')}
+              />
+              <Text style={styles.storytext}>CHAPTER 03</Text>
+            </View>
+          </ImageBackground>
         </TouchableOpacity> 
 
         <View style={styles.line}></View>
 
         <TouchableOpacity onPress = {() =>alert('章節尚未開啟!')}> 
-        <View style={styles.storybox}>
-        <Text style={styles.storytext2}>CHAPTER 04</Text>
-          <Image style={{ width:113,height:113 }}
-                source={require('../assets/c4.png')}
-          />
-        </View>
+          <ImageBackground source={image2} style={styles.cat}>
+            <View style={styles.storybox}>
+            <Text style={styles.storytext2}>CHAPTER 04</Text>
+              <Image style={{ width:113,height:113 }}
+                    source={require('../assets/c4.png')}
+              />
+            </View>
+          </ImageBackground>
         </TouchableOpacity>
 
         <View style={styles.line}></View>
@@ -113,7 +119,7 @@ const styles = StyleSheet.create({
   },
   storytext3:{
     color:"#CBA72F",
-    marginTop:25,
+    marginTop:15,
     fontSize:15
   },
   line:{
@@ -122,7 +128,7 @@ const styles = StyleSheet.create({
     backgroundColor:"#F2E6D8",
     alignItems:"center",
   },
-  catG:{
+  cat:{
     height:null,
     width:null,
   }
