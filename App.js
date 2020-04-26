@@ -3,50 +3,27 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Image } from 'react-native';
-
-import AlbumScreen from './src/screens/AlbumScreen';
-import DetailScreen from './src/screens/DetailScreen';
-import SettingsScreen from './src/screens/SettingsScreen';
-import MeScreen from './src/screens/MeScreen';
-import albumData from "./src/json/albums.json";
-
+import { View,Image,StyleSheet,ImageBackground } from 'react-native';
 
 import JournalScreen from './screen/JournalScreen';
 import KnowledgeScreen from './screen/KnowledgeScreen';
 import UserScreen from "./screen/UserScreen";
+import Story1 from "./story/Story1";
 
+const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/wall.png" };
 
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-/*const JournalStack = () => {
+const JournalStack = ({}) => {
   return (
       <Stack.Navigator>
-        <Stack.Screen 
-          name=" " 
-          component={JournalScreen} 
-          
-        />
-        <Stack.Screen 
-          name="Detail" 
-          component={DetailScreen}
-          options={({ route }) => ({ 
-            title: route.params.title,
-            headerStyle: {
-              backgroundColor: '#4F9DEB',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: '400',
-              fontSize: 20
-            },  
-           })}
-        />      
+        <Stack.Screen name="  "component={JournalScreen} style={styles.Stack} />
+        <Stack.Screen name="Story1"component={Story1}/> 
       </Stack.Navigator>
   );
-}*/
+}
 
 
 const App = () => {
@@ -93,12 +70,18 @@ const App = () => {
         }}
         
       >
-        <Tab.Screen name="Journal" component={JournalScreen} />
+        <Tab.Screen name="Journal" component={JournalStack} />
         <Tab.Screen name="Knowledge" component={KnowledgeScreen} />
         <Tab.Screen name="User" component={UserScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
 }
+
+const styles = StyleSheet.create({
+  Stack:{
+      height:0,
+    },
+});
 
 export default App;
