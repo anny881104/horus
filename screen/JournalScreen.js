@@ -1,9 +1,8 @@
 import React from "react";
-import { ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,Button} from 'react-native';
+import { ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground} from 'react-native';
 
-
-
-
+const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catG.png" };
+const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catW.png" };
 
 
 
@@ -15,17 +14,22 @@ const JouralScreen = ({ navigation }) => {
               source={require('../assets/journyhead.png')}
         />
        <View style={styles.box}>
-       <TouchableOpacity  onPress={() => navigation.navigate('Story1')}> 
-        <View style={styles.storybox}>
-            <Image style={{ width:113,height:113 }}
-                  source={require('../assets/c1.png')}
-            />
-            <Text style={styles.ystorytext}>CHAPTER 01</Text>
-          </View>
-        </TouchableOpacity> 
         
-        <View style={styles.line}></View>
+            <TouchableOpacity  onPress={() => navigation.navigate('Story1')}> 
+              <ImageBackground source={image1} style={styles.catG}>
+                <View style={styles.storybox}>
+                
+                    <Image style={{ width:113,height:113}}
+                        source={require('../assets/c1.png')}
+                    />
+                    <Text style={styles.ystorytext}>CHAPTER 01</Text> 
+                    
+                </View>
+              </ImageBackground>
+            </TouchableOpacity> 
 
+          <View style={styles.line}></View>
+       
         <TouchableOpacity onPress = {() =>alert('章節尚未開啟!')}> 
         <View style={styles.storybox}>
         <Text style={styles.storytext2}>CHAPTER 02</Text>
@@ -85,7 +89,7 @@ const styles = StyleSheet.create({
     marginTop:60,
     marginBottom:60,
     width:null,
-    height:100,
+    height:null
   },
   paybox:{
     alignItems:"center",
@@ -95,7 +99,7 @@ const styles = StyleSheet.create({
   ystorytext:{
     color:"#CBA72F",
     marginLeft:50,
-    fontSize:20
+    fontSize:20,
   },
   storytext:{
     color:"#F2E6D8",
@@ -117,6 +121,10 @@ const styles = StyleSheet.create({
     height:.3,
     backgroundColor:"#F2E6D8",
     alignItems:"center",
+  },
+  catG:{
+    height:null,
+    width:null,
   }
 });
 

@@ -3,14 +3,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { View,Image,StyleSheet,ImageBackground } from 'react-native';
+import { View,Image,StyleSheet } from 'react-native';
 
 import JournalScreen from './screen/JournalScreen';
 import KnowledgeScreen from './screen/KnowledgeScreen';
 import UserScreen from "./screen/UserScreen";
 import Story1 from "./story/Story1";
-
-const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/wall.png" };
 
 
 const Stack = createStackNavigator();
