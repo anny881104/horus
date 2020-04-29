@@ -12,11 +12,11 @@ const JouralScreen = ({ navigation }) => {
     <SafeAreaView>
      <ScrollView style={{backgroundColor:"black"}}>
         <Image style={{ width:null,height:294 }}
-              source={require('../assets/journyhead.png')}
+              source={require('../assets/journyheadnew.png')}
         />
        <View style={styles.box}>
         
-            <TouchableOpacity  onPress={() => navigation.navigate('Story1')}> 
+            <TouchableOpacity  onPress={() => navigation.navigate('CHAPTER 01')}> 
               <ImageBackground source={image1} style={styles.cat}>
                 <View style={styles.storybox}>
                 

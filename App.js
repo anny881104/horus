@@ -8,7 +8,7 @@ import JournalScreen from './screen/JournalScreen';
 import KnowledgeScreen from './screen/KnowledgeScreen';
 import UserScreen from "./screen/UserScreen";
 import StartScreen from "./screen/StartScreen";
-import Story1 from "./story/Story1";
+import CHAPTER01 from "./story/Story1";
 
 
 
@@ -32,7 +32,7 @@ const JournalStack = ({}) => {
             height:0,
           }
         }} />
-        <Stack.Screen name="Story1"component={Story1}/> 
+        <Stack.Screen name="CHAPTER 01"component={CHAPTER01} /> 
       </Stack.Navigator>
   );
 }
@@ -63,7 +63,7 @@ const App = () => {
             // You can return any component that you like here!
             return (
               <Image 
-                style={{width: 35, height: 35}}
+                style={{width: 40, height: 35}}
                 source={iconPath} 
               />
             );

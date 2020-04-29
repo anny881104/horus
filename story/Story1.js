@@ -1,14 +1,16 @@
 import React from "react";
 import { ScrollView } from 'react-native';
-import { ListItem } from 'react-native-elements';
+import {Image} from 'react-native-elements';
 
 // Make a component
-const SettingsScreen = ({ navigation }) => {
+const Story1Screen = ({ navigation }) => {
     return (
-        <ScrollView style={{paddingTop: 44}}>
-            
+        <ScrollView style={{paddingTop: 0}}>
+            <Image style={{ width:null,height:2896 }}
+              source={require('../assets/story1.png')}
+        />
         </ScrollView>
     );
 }
 
-export default SettingsScreen;
+export default Story1Screen;

@@ -324,7 +324,7 @@ const knowledgepage = ({ navigation }) => {
     </View>
     <View style={styles.card}>
             
-            <Image style={styles.cardpic} source={require('../assets/Kebechsenef.png')}/>
+            <Image style={styles.cardpic} source={require('../assets/mummy4.png')}/>
             <View style={styles.cardtext}>
             <Text style={styles.article}>  </Text>
                 <Text style={styles.texttitle}>5.美化包裹</Text>
