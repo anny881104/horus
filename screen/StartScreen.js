@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView,Text,StyleSheet,View,Image,ImageBackground } from 'react-native';
+import { ScrollView,Text,StyleSheet,View,Image,ImageBackground,TouchableOpacity } from 'react-native';
 
 const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/enterpageBG.png" };
 
@@ -62,10 +62,14 @@ const UserScreen = ({ navigation }) => {
             </Text>
           </View>
 
+          
+          <TouchableOpacity  onPress={() => navigation.navigate('  ')}> 
           <Image style={{ width: 60, height: 60 }}
                 source={require('../assets/enertimg.png')}
           />
-         
+          <Text style={styles.abouttext2}>開始旅程</Text>
+        </TouchableOpacity> 
+
         </View>
 
       </ImageBackground>  
@@ -76,18 +80,23 @@ const UserScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
       box:{ 
         
-        marginTop:96,
+        marginTop:90,
         alignItems:"center",
         justifyContent:"center",
       },
       aboutspace:{
-        marginBottom:35,
+        marginBottom:30,
         justifyContent:"center",
         alignItems:"center",
       },
       abouttext:{
         fontSize: 14,
         marginTop:12,
+      },
+      abouttext2:{
+        fontSize: 14,
+        marginTop:2,
+        //color:"#4E5C69",
       },
       bgimage:{
         height:700,

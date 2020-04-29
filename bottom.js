@@ -15,28 +15,6 @@ import Story1 from "./story/Story1";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-const JournalStack = ({}) => {
-  return (
-      
-      <Stack.Navigator>
-        <Stack.Screen name="   "component={StartScreen}
-        options={{
-          headerStyle:{
-            height:0,
-          }
-        }} 
-        /> 
-        <Stack.Screen name="  "component={JournalScreen}  
-        options={{
-          headerStyle:{
-            height:0,
-          }
-        }} />
-        <Stack.Screen name="Story1"component={Story1}/> 
-      </Stack.Navigator>
-  );
-}
-
 
 const App = () => {
   return (

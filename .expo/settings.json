@@ -1,8 +1,8 @@
 {
+  "urlRandomness": "9m-ntq",
   "hostType": "tunnel",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "un-7dn",
   "https": true
 }

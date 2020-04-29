@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground} from 'react-native';
+import { ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground,SafeAreaView} from 'react-native';
 
 const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catGbg.png" };
 const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catWbg.png" };
@@ -9,7 +9,8 @@ const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master
 // Make a component
 const JouralScreen = ({ navigation }) => {
   return (
-     <ScrollView style={{backgroundColor:"#000000"}}>
+    <SafeAreaView>
+     <ScrollView style={{backgroundColor:"black"}}>
         <Image style={{ width:null,height:294 }}
               source={require('../assets/journyhead.png')}
         />
@@ -70,16 +71,21 @@ const JouralScreen = ({ navigation }) => {
         <View style={styles.line}></View>
 
        </View>
-       <View style={styles.paybox}>
-          <Image style={{ width:264,height:187 }}
-                source={require('../assets/pay.png')}
-          />
-          <Text style={styles.storytext3}>付費以解鎖更多內容</Text>
-        </View>
+
+       <TouchableOpacity onPress = {() =>alert('coming soon!')}> 
+        <View style={styles.paybox}>
+            <Image style={{ width:264,height:187 }}
+                  source={require('../assets/pay.png')}
+            />
+            <Text style={styles.storytext3}>付費以解鎖更多內容</Text>
+          </View>
+        </TouchableOpacity>
       
       
     </ScrollView>
-      
+    </SafeAreaView>
+
+    
 
 
   );
