@@ -2,30 +2,20 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View,Image,StyleSheet } from 'react-native';
+import { Image} from 'react-native';
 
 import JournalScreen from './screen/JournalScreen';
 import KnowledgeScreen from './screen/KnowledgeScreen';
 import UserScreen from "./screen/UserScreen";
-import StartScreen from "./screen/StartScreen";
 import CHAPTER01 from "./story/Story1";
 
-
-
-const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const JournalStack = ({}) => {
   return (
       
       <Stack.Navigator>
-        <Stack.Screen name="   "component={StartScreen}
-        options={{
-          headerStyle:{
-            height:0,
-          }
-        }} 
-        /> 
         <Stack.Screen name="  "component={JournalScreen}  
         options={{
           headerStyle:{
@@ -36,7 +26,6 @@ const JournalStack = ({}) => {
       </Stack.Navigator>
   );
 }
-
 
 const App = () => {
   return (

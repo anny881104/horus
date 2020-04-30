@@ -8,7 +8,7 @@ import JournalScreen from './screen/JournalScreen';
 import KnowledgeScreen from './screen/KnowledgeScreen';
 import UserScreen from "./screen/UserScreen";
 import StartScreen from "./screen/StartScreen";
-import Story1 from "./story/Story1";
+import CHAPTER01 from "./story/Story1";
 
 
 
@@ -16,7 +16,10 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
-const App = () => {
+
+
+
+const bottom = () => {
   return (
     <NavigationContainer >
       <Tab.Navigator 
@@ -41,7 +44,7 @@ const App = () => {
             // You can return any component that you like here!
             return (
               <Image 
-                style={{width: 35, height: 35}}
+                style={{width: 40, height: 35}}
                 source={iconPath} 
               />
             );
@@ -60,7 +63,7 @@ const App = () => {
         }}
         
       >
-        <Tab.Screen name="Journal" component={JournalStack} />
+        <Tab.Screen name="Journal" component={JournalScreen} />
         <Tab.Screen name="Knowledge" component={KnowledgeScreen} />
         <Tab.Screen name="User" component={UserScreen} />
       </Tab.Navigator>
@@ -69,4 +72,4 @@ const App = () => {
 }
 
 
-export default App;
+export default bottom;

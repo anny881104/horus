@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 import {Image} from 'react-native-elements';
 
 // Make a component
-const Story1Screen = ({ navigation }) => {
+const CHAPTER01 = ({ navigation }) => {
     return (
         <ScrollView style={{paddingTop: 0}}>
             <Image style={{ width:null,height:2896 }}
@@ -13,4 +13,4 @@ const Story1Screen = ({ navigation }) => {
     );
 }
 
-export default Story1Screen;
+export default CHAPTER01;

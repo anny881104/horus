@@ -1,16 +1,25 @@
 import React from "react";
-import { ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground,SafeAreaView} from 'react-native';
+import {ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground,SafeAreaView} from 'react-native';
+import Start from "./StartScreen";
+
 
 const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catGbg.png" };
 const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/catWbg.png" };
 
 
-
 // Make a component
 const JouralScreen = ({ navigation }) => {
+
   return (
+    
     <SafeAreaView>
+      
+    <Start></Start>
+
      <ScrollView style={{backgroundColor:"black"}}>
+
+    
+
         <Image style={{ width:null,height:294 }}
               source={require('../assets/journyheadnew.png')}
         />
@@ -137,7 +146,8 @@ const styles = StyleSheet.create({
   cat:{
     height:null,
     width:null,
-  }
+  },
+
 });
 
 export default JouralScreen;
