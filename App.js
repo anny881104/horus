@@ -2,7 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Image} from 'react-native';
+import { Image,AsyncStorage  } from 'react-native';
+import { SplashScreen } from 'expo';
 
 import JournalScreen from './screen/JournalScreen';
 import KnowledgeScreen from './screen/KnowledgeScreen';
@@ -11,6 +12,8 @@ import CHAPTER01 from "./story/Story1";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
+const PERSISTENCE_KEY = "NAVIGATION_STATE";
 
 const JournalStack = ({}) => {
   return (
@@ -28,8 +31,38 @@ const JournalStack = ({}) => {
 }
 
 const App = () => {
-  return (
-    <NavigationContainer >
+  const [isLoadingComplete, setLoadingComplete] = React.useState(false);
+  const [initialNavigationState, setInitialNavigationState] = React.useState();
+  
+  React.useEffect(() => {
+    async function loadResourcesAndDataAsync() {
+      try {
+        SplashScreen.preventAutoHide();
+        const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
+        const state = JSON.parse(savedStateString);
+        setInitialNavigationState(state);
+      } catch (e) {
+        // We might want to provide this error information to an error reporting service
+        console.warn(e);
+      } finally {
+        setLoadingComplete(true);
+        SplashScreen.hide();
+      }
+    }
+    loadResourcesAndDataAsync();
+  }, []);
+
+  if (!isLoadingComplete) {
+    return null;
+  } else {
+    return (
+      
+    <NavigationContainer 
+        initialState={initialNavigationState}
+        onStateChange={(state)=>
+          AsyncStorage.setItem(PERSISTENCE_KEY, JSON.stringify(state))
+        }
+      >
       <Tab.Navigator 
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -79,5 +112,6 @@ const App = () => {
   );
 }
 
+}
 
 export default App;
