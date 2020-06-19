@@ -56,7 +56,7 @@ const JouralScreen = ({ navigation }) => {
         <TouchableOpacity onPress = {() =>alert('章節尚未開啟!')}> 
           <ImageBackground source={image2} style={styles.cat}>
             <View style={styles.storybox}>
-              <Image style={{ width:113,height:113 }}
+              <Image style={{ width:93,height:93 }}
                     source={require('../assets/c3.png')}
               />
               <Text style={styles.storytext}>CHAPTER 03</Text>
@@ -120,22 +120,22 @@ const styles = StyleSheet.create({
   ystorytext:{
     color:"#CBA72F",
     marginLeft:50,
-    fontSize:20,
+    fontSize:16,
   },
   storytext:{
-    color:"#F2E6D8",
+    color:"#313131",
     marginLeft:50,
-    fontSize:20
+    fontSize:16
   },
   storytext2:{
-    color:"#F2E6D8",
+    color:"#313131",
     marginRight:50,
-    fontSize:20
+    fontSize:16
   },
   storytext3:{
     color:"#CBA72F",
     marginTop:15,
-    fontSize:15
+    fontSize:16
   },
   line:{
     width:350,

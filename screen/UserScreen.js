@@ -7,7 +7,7 @@ const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/
 // Make a component
 const UserScreen = ({ navigation }) => {
   return (
-   <View style={{backgroundColor:"#CBA72F"}}>
+   <View style={{backgroundColor:"#F2E6D8"}}>
       <ImageBackground source={image} style={styles.bgimage}>
 
         <View style={styles.userbox}>
@@ -63,13 +63,7 @@ const styles = StyleSheet.create({
         borderRadius:15,
         alignItems:"center",
         justifyContent:"center",
-        backgroundColor:"#F2E6D8",
-        shadowColor:"#000000",
-        shadowOpacity:.4,
-        shadowOffset:{
-          height:4,
-          width:2
-        },
+        backgroundColor:"#CBA72F",
       },
       bgimage:{
         height:643,
