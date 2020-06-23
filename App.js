@@ -25,7 +25,9 @@ const JournalStack = ({}) => {
             height:0,
           }
         }} />
+
         <Stack.Screen name="CHAPTER 01"component={CHAPTER01} /> 
+        
       </Stack.Navigator>
   );
 }
@@ -85,7 +87,7 @@ const App = () => {
             // You can return any component that you like here!
             return (
               <Image 
-                style={{width: 40, height: 35}}
+                style={{width: 30, height: 30,marginTop:5,}}
                 source={iconPath} 
               />
             );
@@ -98,6 +100,7 @@ const App = () => {
             fontSize: 11,
             marginTop: 0,
             padding: 0,
+            marginBottom:8,
           },
           style:{height:56,backgroundColor:"#F2E6D8",shadowColor:"#929292",shadowOpacity:.5}
           
