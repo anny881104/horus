@@ -1,10 +1,11 @@
-import React from "react";
-import {ScrollView,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground,SafeAreaView,Dimensions} from 'react-native';
+import React, { Component, useState } from "react";
+import {ScrollView,Text,StyleSheet,View,Image,ImageBackground,SafeAreaView,TouchableWithoutFeedback} from 'react-native';
 
+import { Alert,Modal, TouchableHighlight} from 'react-native';
 import Start from "./StartScreen";
 import Swiper from 'react-native-swiper'
-const { width } = Dimensions.get('window')
-const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/Jbg.png" };
+import Inputs from "./name";
+const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/JOURNEYTOP.png" };
 const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/ycatbg.png" };
 const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/wcatbg.png" };
 
@@ -12,155 +13,268 @@ const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master
 // Make a component
 const JouralScreen = ({ navigation }) => {
 
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     
-    <SafeAreaView  horizontal={true}>
-      
+    <SafeAreaView>
     <Start></Start>
+    <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+        }}
+      >
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text style={styles.modalText}>章節尚未開啟!</Text>
 
-    <View style={{backgroundColor:"#F2E6D8"}}>
-        <Image style={{width:414,height:276}} source={require('../assets/JOURNEYTOP.png')}/>
-        <Text style={styles.welcometext}>Wellcome Back ,KABA</Text>
-        <Text style={styles.welcometext2}>準備好啟程了嗎</Text>
-      <ScrollView style={styles.scroll}
-       horizontal={true} 
-       showsHorizontalScrollIndicator={false}
-       >
-            <TouchableOpacity  onPress={() => navigation.navigate('CHAPTER 01')}> 
-                    <View style={styles.card1}>
-                
-                            <Image style={styles.cardpic} source={require('../assets/Canopic.png')}/>
-                            <View style={styles.cardtext}>
-                            <Text style={styles.article}>  </Text>
-                            </View>
-                    
-                    </View>
-             </TouchableOpacity>   
+            <TouchableHighlight
+              style={{ ...styles.openButton, backgroundColor: "#CBA72F" }}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}
+            >
+              <Text style={styles.textStyle}>CLOSE</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
 
-                <TouchableOpacity onPress = {() =>alert('章節尚未開啟!')}> 
-                  <View style={styles.card}>
-                          
-                          <Image style={styles.cardpic} source={require('../assets/Imset.png')}/>
-                          <View style={styles.cardtext}>
-                          <Text style={styles.article}>  </Text>
-                          </View>
-                  
-                  </View>
-                </TouchableOpacity> 
 
-                <View style={styles.card}>
-                        
-                        <Image style={styles.cardpic} source={require('../assets/Duamutef.png')}/>
-                        <View style={styles.cardtext}>
-                        <Text style={styles.article}>  </Text>
-                        </View>
-                
-                </View>
-                <View style={styles.card}>
-                        
-                        <Image style={styles.cardpic} source={require('../assets/Hapi.png')}/>
-                        <View style={styles.cardtext}>
-                        <Text style={styles.article}>  </Text>
-                        </View>
-                
-                </View>
-                <View style={styles.card}>
-                        
-                        <Image style={styles.cardpic} source={require('../assets/Hapi.png')}/>
-                        <View style={styles.cardtext}>
-                        <Text style={styles.article}>  </Text>
-                        </View>
-                
-                </View>
-                
-             
+
+
+    <View style={{backgroundColor:"#F2E6D8",width:414,height:730}}>
+    <View style={styles.swipcontainer}style={{width:414,height:265}}>
+      <Swiper 
+        height={265} loadMinimalSize={9} showsPagination={false}
+        horizontal={true} autoplay={true} autoplayTimeout={8} 
+        dotColor={'#F2E6D8'} activeDotColor={'#808080'}
+      >
+          <View>
+            <ImageBackground source={image} style={{width:414,height:265}}>
+              <Text style={styles.welcometext}>Wellcome Back ,KABA</Text>
+              <Text style={styles.welcometext2}>準備好啟程了嗎</Text>
+            </ImageBackground>
+          </View>
+          <View>
+            <ImageBackground source={image1} style={{width:414,height:265}}>
+              <Text style={styles.welcometext}>Wellcome Back ,KABA</Text>
+              <Text style={styles.welcometext2}>準備好啟程了嗎</Text>
+            </ImageBackground>
+          </View>
+          <View>
+            <ImageBackground source={image2} style={{width:414,height:265}}>
+              <Text style={styles.welcometext}>Wellcome Back ,KABA</Text>
+              <Text style={styles.welcometext2}>準備好啟程了嗎</Text>
+            </ImageBackground>
+          </View>
+      </Swiper>
+    </View>
+
+        <Text style={styles.titletext}>旅程章節</Text>
+        <Text style={styles.titletext2}>JOURNEY CHAPTER</Text>
+
+        <ScrollView  horizontal={true} showsHorizontalScrollIndicator={false}>
+          <TouchableWithoutFeedback  onPress={() => navigation.navigate('CHAPTER 01')}> 
+            <View>
+            <View style={styles.card1}>
+              <Image style={styles.cardpic} source={require('../assets/J01.png')}/>
+            </View>
+            <Text style={styles.cardtext}>CHAPTER 01</Text>
+            <Text style={styles.cardtext2}>無境的沙漠</Text>
+            </View>
+            </TouchableWithoutFeedback>   
+          
+          
+            
+          <TouchableWithoutFeedback onPress={() => {setModalVisible(true);}}> 
+          <View>
+            <View style={styles.card}>
+              <Image style={styles.cardpic} source={require('../assets/J02.png')}/>
+            </View>
+            <Text style={styles.cardtext3}>CHAPTER 02</Text>
+            <Text style={styles.cardtext4}>死者的國度</Text>
+            </View>
+            </TouchableWithoutFeedback> 
+         
+
+          <TouchableWithoutFeedback onPress={() => {setModalVisible(true);}}> 
+          <View>
+            <View style={styles.card}>
+             <Image style={styles.cardpic} source={require('../assets/J03.png')}/>
+            </View>
+            <Text style={styles.cardtext3}>CHAPTER 03</Text>
+            <Text style={styles.cardtext4}>無花果樹下</Text>
+            </View>
+            </TouchableWithoutFeedback> 
+        
+          <TouchableWithoutFeedback onPress={() => {setModalVisible(true);}}> 
+          <View>
+            <View style={styles.card}>
+              <Image style={styles.cardpic} source={require('../assets/J04.png')}/>
+            </View>
+            <Text style={styles.cardtext3}>CHAPTER 04</Text>
+            <Text style={styles.cardtext4}>沉默的神靈與船</Text>
+            </View>
+            </TouchableWithoutFeedback>
+           
+          <TouchableWithoutFeedback onPress={() => {setModalVisible(true);}}>   
+          <View>         
+          <View style={styles.card2}>
+              <Image style={styles.cardpic} source={require('../assets/J05.png')}/>
+            </View>
+            <Text style={styles.cardtext3}>RE : AFTER</Text>
+            <Text style={styles.cardtext4}>購買解鎖新篇章</Text>
+            </View>    
+          </TouchableWithoutFeedback> 
+                         
                
     
               </ScrollView  >
+            
         </View>
 
+
     </SafeAreaView>
-
-    
-
 
   );
 }
 
 const styles = StyleSheet.create({
-  
-  welcometext:{
-    fontSize:16,
-    fontWeight:'bold',
-    color:"#F3EFEB",
-    marginTop:-55,
-    marginLeft:30
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
   },
-  welcometext:{
-    fontSize:16,
-    fontWeight:'bold',
-    color:"#F3EFEB",
-    marginTop:0,
-    marginLeft:30
+  modalView: {
+    backgroundColor: "#F3EFEB",
+    borderRadius: 15,
+    padding: 30,
+    alignItems: "center",
+    fontFamily:"Segoe UI",
   },
-  cat:{
-    height:null,
-    width:null,
+  openButton: {
+    backgroundColor: "#F194FF",
+    borderRadius: 20,
+    padding: 10,
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    fontSize:16,
+    marginBottom: 15,
+    textAlign: "center"
   },
 
+
+
+  welcometext:{
+    fontSize:15,
+    color:"#F3EFEB",
+    marginLeft:30,
+    marginTop:210,
+  },
+  welcometext2:{
+    fontSize:16,
+    color:"#F3EFEB",
+    marginLeft:30,
+    marginTop:4,
+  },
+  titletext:{
+    fontSize:25,
+    fontWeight:'bold',
+    color:"#4E5C69",
+    marginLeft:30,
+    marginTop:35,
+  },
+  titletext2:{
+    fontSize:13,
+    color:"#4E5C69",
+    marginLeft:30,
+    marginTop:5,
+  },
+  cardtext:{
+    fontSize:18,
+    fontWeight:'bold',
+    color:"#FFFFFF",
+    marginLeft:40,
+    marginTop:220,
+    position:"absolute"
+  },
+  cardtext2:{
+    fontSize:15,
+    color:"#FFFFFF",
+    marginLeft:40,
+    marginTop:245,
+    position:"absolute"
+  },
+  cardtext3:{
+    fontSize:18,
+    fontWeight:'bold',
+    color:"#FFFFFF",
+    marginLeft:25,
+    marginTop:220,
+    position:"absolute"
+  },
+  cardtext4:{
+    fontSize:15,
+    color:"#FFFFFF",
+    marginLeft:25,
+    marginTop:245,
+    position:"absolute"
+  },
   card1:{
-    width:253,
-    height:335,
+    width:222,
+    height:236,
     flexDirection:"row",
-    paddingTop:12,
-    paddingBottom:12,
-    paddingLeft:40,
     backgroundColor:"#F3EFEB",
-    marginLeft:80,
-    marginTop:180,
-    borderRadius:13,
-    shadowColor:"black",
+    marginLeft:28,
+    marginTop:35,
+    borderRadius:16,
   },
   card:{
-    width:253,
-    height:335,
+    width:222,
+    height:236,
     flexDirection:"row",
-    paddingTop:12,
-    paddingBottom:12,
-    paddingLeft:40,
     backgroundColor:"#F3EFEB",
     marginLeft:10,
-    marginTop:180,
-    borderRadius:13,
-    shadowColor:"black",
+    marginTop:35,
+    borderRadius:16,
 },
- 
+
+  card2:{
+    width:222,
+    height:236,
+    flexDirection:"row",
+    alignItems:'center',
+    justifyContent:'center',
+    backgroundColor:"#0D0D0D",
+    marginLeft:10,
+    marginRight:28,
+    marginTop:35,
+    borderRadius:16,
+  },
 cardpic:{
-  width:149,
-  height:200,
+  width:222,
+  height:236,
   //marginBottom:20,
   
 },
-  cardtext:{
-    marginLeft:10,
-    // width:165,
-    // height:115,
-    flexDirection:"column",
-    alignItems:"flex-start",
-    justifyContent:"space-around",
-},
+
  
-texttitle:{
-    fontSize:16,
-    fontWeight:'bold',
-    //fontFamily:'Arial',
+
+cat:{
+  height:null,
+  width:null,
 },
- 
-article:{
-    fontSize:13,
-    fontWeight:'normal',
-},
- 
+
 });
 
 export default JouralScreen;

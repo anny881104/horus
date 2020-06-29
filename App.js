@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+ 
 import { Image,AsyncStorage  } from 'react-native';
 import { SplashScreen } from 'expo';
 
@@ -26,7 +27,12 @@ const JournalStack = ({}) => {
           }
         }} />
 
-        <Stack.Screen name="CHAPTER 01"component={CHAPTER01} /> 
+        <Stack.Screen name="CHAPTER 01"component={CHAPTER01}
+          options={{
+            headerStyle:{
+              height:0,
+            }
+          }} /> 
         
       </Stack.Navigator>
   );
