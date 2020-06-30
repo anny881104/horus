@@ -4,7 +4,7 @@ import {ScrollView,Text,StyleSheet,View,Image,ImageBackground,SafeAreaView,Touch
 import { Alert,Modal, TouchableHighlight} from 'react-native';
 import Start from "./StartScreen";
 import Swiper from 'react-native-swiper'
-import Inputs from "./name";
+import Inputs from "./SignIn";
 const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/JOURNEYTOP.png" };
 const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/ycatbg.png" };
 const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/wcatbg.png" };
@@ -12,13 +12,17 @@ const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master
 
 // Make a component
 const JouralScreen = ({ navigation }) => {
-
+ 
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
     
-    <SafeAreaView>
+    <SafeAreaView style={{backgroundColor:"#1E1E1E"}}>
+   
     <Start></Start>
+    
+    {/* <Inputs></Inputs> */}
+
     <Modal
         animationType="slide"
         transparent={true}

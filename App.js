@@ -10,6 +10,7 @@ import JournalScreen from './screen/JournalScreen';
 import KnowledgeScreen from './screen/KnowledgeScreen';
 import UserScreen from "./screen/UserScreen";
 import CHAPTER01 from "./story/Story1";
+import {StoreProvider} from './store'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -39,8 +40,11 @@ const JournalStack = ({}) => {
 }
 
 const App = () => {
+  
   const [isLoadingComplete, setLoadingComplete] = React.useState(false);
   const [initialNavigationState, setInitialNavigationState] = React.useState();
+  
+
   
   React.useEffect(() => {
     async function loadResourcesAndDataAsync() {
@@ -64,6 +68,8 @@ const App = () => {
     return null;
   } else {
     return (
+
+      
       
     <NavigationContainer 
         initialState={initialNavigationState}

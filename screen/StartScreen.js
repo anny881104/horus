@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import Swiper from 'react-native-swiper'
 import {Dimensions,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground,SafeAreaView,Modal,Button,backgroundColor} from 'react-native';
-const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/startbg.png" };
 
 const{width,height}=Dimensions.get('window');
-const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/Jbg.png" };
-
+const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/page2%20%E2%80%93%201.png" };
+const image3 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/page3%20%E2%80%93%201.png" };
+const image4 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/page4%20%E2%80%93%201.png" };
 class Start extends Component{
   constructor(){
     super();
@@ -19,9 +19,9 @@ class Start extends Component{
         <View > 
         <Modal animationType="slide" visible={this.state.modalVisible} >
        
-        <Swiper horizontal={true}loop={false}autoplay={true}autoplayTimeout={4}showsPagination={false}
+        <Swiper horizontal={true}loop={false}autoplay={true}autoplayTimeout={5}showsPagination={false}
        >
-        <Image style={{width:414,height:731,position:'absolute'}} source={require('../assets/first.png')}/>
+        <Image style={{width:414,height:731,position:'absolute'}} source={require('../assets/page0.png')}/>
 
         <Swiper horizontal={true} loop={false} autoplay={ false }
         dot={
@@ -55,7 +55,7 @@ class Start extends Component{
        >
  
              <View style={styles.slide}>
-                 <ImageBackground source={image} style={{width: 414, height: 731,zIndex:0}}>
+                 <ImageBackground source={image2} style={{width: 414, height: 731,zIndex:0}}>
                     <View style={styles.textbox}>
                     <Image style={{width:67,height:58}} source={require('../assets/enertimg.png')}/>
                         <Text style={styles.abouttext}> 嗨!終於見到你了，卡巴。</Text>
@@ -67,7 +67,7 @@ class Start extends Component{
                  </ImageBackground>
             </View>
             <View style={styles.slide}>
-                 <ImageBackground source={image} style={{width: 414, height: 731,zIndex:0}}>
+                 <ImageBackground source={image3} style={{width: 414, height: 731,zIndex:0}}>
                 <View style={styles.textbox}>
                     <Image style={{width:67,height:58}} source={require('../assets/enertimg.png')}/>
                         <Text style={styles.abouttext}>對古埃及人來說，死亡並不是結束?</Text>
@@ -79,7 +79,7 @@ class Start extends Component{
                  </ImageBackground>
             </View>
             <View style={styles.slide}>
-              <ImageBackground source={image} style={{width: 414, height: 731,zIndex:0}}>
+              <ImageBackground source={image4} style={{width: 414, height: 731,zIndex:0}}>
               <View style={styles.textbox2}>
                   <Image style={{width:67,height:58}} source={require('../assets/enertimg.png')}/>
                       <Text style={styles.abouttext}>  人死後，Ka跟Ba就會離開，</Text>
