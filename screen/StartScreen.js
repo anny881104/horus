@@ -1,11 +1,11 @@
 import React, {Component} from "react";
 import Swiper from 'react-native-swiper'
-import {Dimensions,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground,SafeAreaView,Modal,Button,backgroundColor} from 'react-native';
-
+import {Dimensions,Text,StyleSheet,View,Image,TouchableOpacity,ImageBackground,Modal} from 'react-native';
 const{width,height}=Dimensions.get('window');
 const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/page2%20%E2%80%93%201.png" };
 const image3 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/page3%20%E2%80%93%201.png" };
 const image4 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/page4%20%E2%80%93%201.png" };
+
 class Start extends Component{
   constructor(){
     super();
@@ -21,7 +21,7 @@ class Start extends Component{
        
         <Swiper horizontal={true}loop={false}autoplay={true}autoplayTimeout={5}showsPagination={false}
        >
-        <Image style={{width:414,height:731,position:'absolute'}} source={require('../assets/page0.png')}/>
+        <Image style={{width:414,height:736,position:'absolute'}} source={require('../assets/page0.png')}/>
 
         <Swiper horizontal={true} loop={false} autoplay={ false }
         dot={
@@ -55,7 +55,7 @@ class Start extends Component{
        >
  
              <View style={styles.slide}>
-                 <ImageBackground source={image2} style={{width: 414, height: 731,zIndex:0}}>
+                 <ImageBackground source={image2} style={{width: 414, height: 736,zIndex:0}}>
                     <View style={styles.textbox}>
                     <Image style={{width:67,height:58}} source={require('../assets/enertimg.png')}/>
                         <Text style={styles.abouttext}> 嗨!終於見到你了，卡巴。</Text>
@@ -67,7 +67,7 @@ class Start extends Component{
                  </ImageBackground>
             </View>
             <View style={styles.slide}>
-                 <ImageBackground source={image3} style={{width: 414, height: 731,zIndex:0}}>
+                 <ImageBackground source={image3} style={{width: 414, height: 736,zIndex:0}}>
                 <View style={styles.textbox}>
                     <Image style={{width:67,height:58}} source={require('../assets/enertimg.png')}/>
                         <Text style={styles.abouttext}>對古埃及人來說，死亡並不是結束?</Text>
@@ -79,7 +79,7 @@ class Start extends Component{
                  </ImageBackground>
             </View>
             <View style={styles.slide}>
-              <ImageBackground source={image4} style={{width: 414, height: 731,zIndex:0}}>
+              <ImageBackground source={image4} style={{width: 414, height: 736,zIndex:0}}>
               <View style={styles.textbox2}>
                   <Image style={{width:67,height:58}} source={require('../assets/enertimg.png')}/>
                       <Text style={styles.abouttext}>  人死後，Ka跟Ba就會離開，</Text>
@@ -93,26 +93,22 @@ class Start extends Component{
             </View>
         </Swiper>
           
-        </Swiper>
+      </Swiper>
 
-    <View style={styles.btn} >
-    <TouchableOpacity  onPress={() => {this.setState({modalVisible:false})}}> 
-        <Image style={{ width: 50, height: 50 }}
-               source={require('../assets/skipbtn.png')}
-        />
-    </TouchableOpacity>  
-    </View>
+            <View style={styles.btn} >
+            <TouchableOpacity  onPress={() => {this.setState({modalVisible:false})}}> 
+                <Image style={{ width: 50, height: 50 }}
+                      source={require('../assets/skipbtn.png')}
+                />
+            </TouchableOpacity>  
+            </View>
   
-</Modal>
-</View>
-
-
-           
+      </Modal>
+    </View>
         )
     }
 }
  
-   
 const styles = StyleSheet.create({
   btn:{
     marginTop:600,

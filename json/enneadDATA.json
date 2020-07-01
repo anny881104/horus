@@ -113,7 +113,7 @@
     
     {
     "pic": "https://raw.githubusercontent.com/jean72027/pic/master/mummy1.png",
-    "title": "1.清洗遺骸",
+    "title": "清洗遺骸",
     "a1":"先用蘇打水清洗擦拭遺骸",
     "a2":"以松脂塗抹面部防止變形",
     "a3":"將細管從鼻子插入顱腔",
@@ -125,7 +125,7 @@
     },
     {
     "pic": "https://raw.githubusercontent.com/jean72027/pic/master/mummy2.png",
-    "title": "2.內臟處理",
+    "title": "內臟處理",
     "a1":"取出遺體的肝、胃、肺、腸",
     "a2":"並用食鹽吸乾水份",
     "a3":"塗上松脂跟食用油",
@@ -137,7 +137,7 @@
     },
     {
     "pic": "https://raw.githubusercontent.com/jean72027/pic/master/mummy3.png",
-    "title": "3.處理心臟",
+    "title": "處理心臟",
     "a1": "古埃及人認為心臟",
     "a2":"是智慧之源",
     "a3":"心臟要放回遺體內",
@@ -149,7 +149,7 @@
     },
     {
     "pic": "https://raw.githubusercontent.com/jean72027/pic/master/mummy4.png",
-    "title": "4.胸腔縫合",
+    "title": "胸腔縫合",
     "a1": "將腹腔胸腔內壁用棕油洗淨",
     "a2":"放入成包的蘇打粉",
     "a3":"及鹼粉瀝青再將屍體放上",
@@ -161,7 +161,7 @@
     },
     {
     "pic": "https://raw.githubusercontent.com/jean72027/pic/master/mummy5.png",
-    "title": "5.美化包裹",
+    "title": "美化包裹",
     "a1": "由於經過乾燥處理",
     "a2":"木乃伊的面部輪廓會變模糊",
     "a3":"需要化妝師為木乃伊",
@@ -172,12 +172,12 @@
     "heart": false
     },
     {"pic": "https://raw.githubusercontent.com/jean72027/pic/master/Canopic.png",
-    "title": "什麼是卡諾皮克罐?",
-    "a1": "製作木乃伊時",
-    "a2":"用來保存內臟的罐子",
-    "a3":"意義是保護法老的內臟",
-    "a4":"以供法老來世使用",
-    "a5":"多由石灰石製成",
+    "title": "保存內臟 — 卡諾皮克罐",
+    "a1": "處理完後的臟器",
+    "a2":"會被放入卡諾皮克罐裡",
+    "a3":"卡諾皮克罐的外觀",
+    "a4":"分別為荷魯斯的四個兒子",
+    "a5":"目的是保護法老的內臟",
     "a6":"",
     "addpic":"https://raw.githubusercontent.com/jean72027/pic/master/m6.png",
     "heart": false

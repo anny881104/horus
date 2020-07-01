@@ -6,14 +6,13 @@ import {
     Animated,
     ScrollView,
     FlatList,
-    AsyncStorage,
     Image,
-    Dimensions
+    Dimensions,
+    StyleSheet
 } from "react-native";
 import AlbumDetail from "./cardDetail"
 import CanoDetail from "./canoDetail"
 import { StoreProvider, StoreContext } from '../store'
-
  
 const { width } = Dimensions.get("window");
 const KnowledgeScreen = ({ navigation }) =>  {
@@ -66,8 +65,15 @@ const KnowledgeScreen = ({ navigation }) =>  {
         
         // 0628加      
         return (
+            // <SafeAreaView style={{backgroundColor:"#1E1E1E"}}>
+
+            
           
                 <View style={{ flex: 1,backgroundColor: "#F2E6D8",height:6277 }}>
+                    <Image style={{width:414,height:35,position:'absolute'}} source={require('../assets/knowtop.png')}/>
+                    <Text style={styles.titletext}>古埃及百科</Text>
+                    <Text style={styles.titletext2}>KNOWLEDGE ABOUT ANCIENT EDYGEPT</Text>
+
                     <View
                         style={{
                             width: "90%",
@@ -78,8 +84,8 @@ const KnowledgeScreen = ({ navigation }) =>  {
                         <View
                             style={{
                                 flexDirection: "row",
-                                marginTop: 40,
-                                marginBottom: 20,
+                                marginTop: 20,
+                                marginBottom: 10,
                                 height: 54,
                                 position: "relative"
                             }}
@@ -150,7 +156,7 @@ const KnowledgeScreen = ({ navigation }) =>  {
                                         fontWeight:'bold'
                                     }}
                                 >
-                                    卡諾皮克罐
+                                    木乃伊製作
                                 </Text>
                             </TouchableOpacity>
                             
@@ -222,13 +228,29 @@ const KnowledgeScreen = ({ navigation }) =>  {
                         </View>
                     </View>
                 </View>
+                // </SafeAreaView>
             
         );
 }
-export default ()　=> {
-  return (
-      <StoreProvider>
-          <KnowledgeScreen />
-      </StoreProvider>
-  )
-};
+
+
+const styles = StyleSheet.create({
+  
+  titletext:{
+    fontSize:25,
+    fontWeight:'bold',
+    color:"#4E5C69",
+    marginLeft:30,
+    marginTop:52,
+  },
+  titletext2:{
+    fontSize:13,
+    color:"#4E5C69",
+    marginLeft:30,
+    marginTop:5,
+  },
+
+ })
+
+export default KnowledgeScreen;
+     

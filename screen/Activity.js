@@ -26,9 +26,9 @@ export default Activity
 
 const styles = StyleSheet.create ({
    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
+      // flex: 1,
+      // justifyContent: 'center',
+      // alignItems: 'center',
       zIndex:100,
       position:"absolute",
    },
@@ -36,7 +36,6 @@ const styles = StyleSheet.create ({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      width:width,
-      height: height,
+      marginTop:260,marginLeft:190,
    }
 })

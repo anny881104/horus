@@ -5,6 +5,8 @@ import { Alert,Modal, TouchableHighlight} from 'react-native';
 import Start from "./StartScreen";
 import Swiper from 'react-native-swiper'
 import Inputs from "./SignIn";
+import story from "../story/Story1";
+
 const image = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/JOURNEYTOP.png" };
 const image1 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/ycatbg.png" };
 const image2 = { uri: "https://raw.githubusercontent.com/anny881104/horus/master/assets/wcatbg.png" };
@@ -17,12 +19,9 @@ const JouralScreen = ({ navigation }) => {
 
   return (
     
-    <SafeAreaView style={{backgroundColor:"#1E1E1E"}}>
-   
+    <View style={{backgroundColor:"#1E1E1E"}}>
     <Start></Start>
     
-    {/* <Inputs></Inputs> */}
-
     <Modal
         animationType="slide"
         transparent={true}
@@ -51,33 +50,35 @@ const JouralScreen = ({ navigation }) => {
 
 
     <View style={{backgroundColor:"#F2E6D8",width:414,height:730}}>
-    <View style={styles.swipcontainer}style={{width:414,height:265}}>
+    
+    <View style={styles.swipcontainer}style={{width:414,height:265,marginTop:35}}>
       <Swiper 
         height={265} loadMinimalSize={9} showsPagination={false}
         horizontal={true} autoplay={true} autoplayTimeout={8} 
         dotColor={'#F2E6D8'} activeDotColor={'#808080'}
       >
           <View>
-            <ImageBackground source={image} style={{width:414,height:265}}>
-              <Text style={styles.welcometext}>Wellcome Back ,KABA</Text>
-              <Text style={styles.welcometext2}>準備好啟程了嗎</Text>
+            <ImageBackground source={require('../assets/AD1.png')} style={{width:414,height:265}}>
+              <Text style={styles.welcometext}>Wellcome Back </Text>
+              <Text style={styles.welcometext2}>準備好啟程了嗎?</Text>
             </ImageBackground>
           </View>
           <View>
-            <ImageBackground source={image1} style={{width:414,height:265}}>
-              <Text style={styles.welcometext}>Wellcome Back ,KABA</Text>
-              <Text style={styles.welcometext2}>準備好啟程了嗎</Text>
+            <ImageBackground source={require('../assets/AD2.png')} style={{width:414,height:265}}>
+              <Text style={styles.welcometext3}>About ENNEAD</Text>
+              <Text style={styles.welcometext4}>關於埃及神祇，你了解多少</Text>
             </ImageBackground>
           </View>
           <View>
-            <ImageBackground source={image2} style={{width:414,height:265}}>
-              <Text style={styles.welcometext}>Wellcome Back ,KABA</Text>
-              <Text style={styles.welcometext2}>準備好啟程了嗎</Text>
+            <ImageBackground source={require('../assets/AD3.png')} style={{width:414,height:265}}>
+              <Text style={styles.welcometext5}>Learn more about Mummy</Text>
+              <Text style={styles.welcometext6}>揭開木乃伊神秘面紗</Text>
             </ImageBackground>
           </View>
       </Swiper>
     </View>
 
+        <Image style={{width:414,height:35,position:'absolute'}} source={require('../assets/knowtop.png')}/>
         <Text style={styles.titletext}>旅程章節</Text>
         <Text style={styles.titletext2}>JOURNEY CHAPTER</Text>
 
@@ -142,7 +143,7 @@ const JouralScreen = ({ navigation }) => {
         </View>
 
 
-    </SafeAreaView>
+    </View>
 
   );
 }
@@ -188,6 +189,30 @@ const styles = StyleSheet.create({
   welcometext2:{
     fontSize:16,
     color:"#F3EFEB",
+    marginLeft:30,
+    marginTop:4,
+  },
+
+  welcometext3:{
+    fontSize:15,
+    color:"#F3EFEB",
+    marginLeft:215,
+    marginTop:195,
+  },
+  welcometext4:{
+    fontSize:16,
+    color:"#F3EFEB",
+    marginLeft:215,
+    marginTop:4,
+  },welcometext5:{
+    fontSize:15,
+    color:"#F2461A",
+    marginLeft:30,
+    marginTop:80,
+  },
+  welcometext6:{
+    fontSize:16,
+    color:"#F2461A",
     marginLeft:30,
     marginTop:4,
   },
